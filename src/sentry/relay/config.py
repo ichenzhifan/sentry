@@ -138,6 +138,11 @@ def get_project_config(project, full_config=True, project_keys=None):
         if dynamic_sampling is not None:
             cfg["config"]["dynamicSampling"] = dynamic_sampling
 
+    # TODO: add feature flag
+    operation_name_breakdown = project.get_option("sentry:operation_name_breakdown")
+    if operation_name_breakdown is not None:
+        cfg["config"]["operationNameBreakdown"] = operation_name_breakdown
+
     if not full_config:
         # This is all we need for external Relay processors
         return ProjectConfig(project, **cfg)

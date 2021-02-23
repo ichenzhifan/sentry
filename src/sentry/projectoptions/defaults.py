@@ -62,3 +62,6 @@ register(key="filters:localhost", epoch_defaults={1: "0"})
 
 # Default dynamic sampling rules
 register(key="sentry:dynamicSampling", epoch_defaults={1: []})
+
+# Default operation name breakdown list
+register(key="sentry:operation_name_breakdown", epoch_defaults={1: ['http', 'db', 'browser', 'resource']})
